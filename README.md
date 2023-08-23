@@ -7,7 +7,7 @@ Haaris Abbas
 Danish Khan
 Aarani Sribavan
 
-## Purpose: Identify which attributes of MASHABLE articles contribute most to being shared online. 
+## Purpose: Identify attributes of MASHABLE articles that contribute most to being shared online. 
 
 There are 58 predictive attributes to work with, these include attributes like: 
 - Num of words in the title
