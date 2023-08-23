@@ -18,4 +18,4 @@ and so on...
 
 ## Data Exploration and Cleaning
 We found that there were a lot of missing values in the data. To identify the whereabouts of the missing values, we created a heatmap. 
-
+![alt text](https://github.com/ThisIsMirk/mashable-shares/blob/main/heatmap.png?raw=true)
