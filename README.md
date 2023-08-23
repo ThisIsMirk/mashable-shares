@@ -1,10 +1,10 @@
 # mashable-shares
-**Using machine learning to see which aspect of an online article (taken from MASHABLE) results in more shares.**
+**Using machine learning to predict whether an article would become popular or not.**
 
 *Credits: Mirza Abubacker, Haaris Abbas, Danish Khan, Aarani Sribavan*
 <br></br>
 
-## Purpose: Identify attributes of MASHABLE articles that contribute most to being shared online.
+## Purpose: Predict if a MASHABLE becomes popular using its attributes as factors.  
 
 There are 58 predictive attributes to work with, these include attributes like: 
 - Num of words in the title
@@ -13,8 +13,17 @@ There are 58 predictive attributes to work with, these include attributes like:
 - Which weekday was the article published on?
 and so on...
 
+The target attribute of this model is the number of shares an article gets. 
+
+Libraries used in this code are:
+- pandas
+- numpy
+- seaborn
+- matplotlib
+- sklearn
+
 ## Data Exploration and Cleaning
-First issue that was identified with the data were the leading spaces that some of the attributes had. This was quickly resolved using this code:
+First issue that was identified with the data were the leading spaces that some of the attribute headers had. This was quickly resolved using this code:
 
 ```
 #removing leading spaces from attribute names
@@ -27,7 +36,7 @@ new_data.rename(columns=dict(zip(old_names,col_names)),inplace=True)
 
 ```
 
-We found that there were a lot of missing values in the data. The empty values in the initial data were 0s and not NULLs. After identifying the columns where 0s had a value, we converted all the 0s to NULLs for the remaining columns. The code went like this:
+We found that there were a lot of missing values in the data. The empty values in the initial data were 0s and not NULLs. After identifying the columns where 0s had a value, we converted all the 0s to NULLs for the remaining columns. 
 
 ```
 #removing columns from the list where the 0's actually mean something and is not considered missing values
@@ -44,12 +53,20 @@ Then, a heatmap was created to identify the whereabouts of the missing values:
 
 ![alt text](https://github.com/ThisIsMirk/mashable-shares/blob/main/heatmapwhite.png?raw=true)
 
-The heatmap was created using the seaborn library and the code looked like this (sns is seaborn):
+The heatmap was created using the seaborn library and the code looked like this:
 
 ```
 #making a heatmap to see what columns have the most missing values
 sns.heatmap(new_data.isnull(), cbar=False)
 ```
+(sns is seaborn)
+
+Further data cleaning such as removing non-predictive attributes and dropping rows with missing values greatly improved performance without affecting accuracy. 
+
+## Target Classification
+We decided to use the mean of the target class as our point of classification. The mean of the target attribute (number of shares) is 3395. Therefore, any article that was shared more than 3395 times is classified as 'popular'. 
+
+
 
 
 
