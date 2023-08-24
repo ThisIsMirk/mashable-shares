@@ -78,54 +78,51 @@ scaler = MinMaxScaler()
 x_train = scaler.fit_transform(x_train)
 x_test = scaler.transform(x_test)
 
-# Commented out IPython magic to ensure Python compatibility.
-# 
-# %%time
-# #decision tree and checking accuracy on train and test data
-# from sklearn.tree import DecisionTreeClassifier
-# from sklearn import metrics as sm
-# 
-# clf = DecisionTreeClassifier().fit(x_train,y_train)
-# 
-# #checking the importance of each column. commented so it doesn't run when code is run normally. 
-# #importance = clf.feature_importances_
-# #inorder_imp = []
-# #for i,v in enumerate(importance):
-# #  inorder_imp.append(v)
-# #   print('Feature: %0d, Score: %.5f' % (i,v))
-# 
-# 
-# 
-# #checking accuracy
-# print('Accuracy on train data for decision tree: {:.2f}'
-#   .format(clf.score(x_train,y_train)))
-# print('Accuracy on test data for decision tree: {:.2f}'
-#   .format(clf.score(x_test,y_test)))
-# 
-# 
-#
+# Commented out IPython magic to ensure Python compatibility. 
+%%time
+#decision tree and checking accuracy on train and test data
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import metrics as sm
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%time
-# #KNN and checking accuracy on train and test data
-# from sklearn.neighbors import KNeighborsClassifier
-# knn = KNeighborsClassifier()
-# knn.fit(x_train,y_train)
-# print('Accuracy on train data for KNN: {:.2f}'
-#   .format(knn.score(x_train,y_train)))
-# print('Accuracy on test data for KNN: {:.2f}'
-#   .format(knn.score(x_test,y_test)))
+clf = DecisionTreeClassifier().fit(x_train,y_train)
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%time
-# #SVM and checking accuracy on train and test data
-# from sklearn.svm import SVC
-# svm = SVC()
-# svm.fit(x_train,y_train)
-# print('Accuracy on train data for SVM: {:.2f}'
-#   .format(svm.score(x_train,y_train)))
-# print('Accuracy on test data for SVM: {:.2f}'
-#   .format(svm.score(x_test,y_test)))
+#checking the importance of each column. commented so it doesn't run when code is run normally. 
+importance = clf.feature_importances_
+inorder_imp = []
+for i,v in enumerate(importance):
+ inorder_imp.append(v)
+  print('Feature: %0d, Score: %.5f' % (i,v))
+
+
+
+#checking accuracy
+print('Accuracy on train data for decision tree: {:.2f}'
+  .format(clf.score(x_train,y_train)))
+print('Accuracy on test data for decision tree: {:.2f}'
+  .format(clf.score(x_test,y_test)))
+
+
+#Commented out IPython magic to ensure Python compatibility.
+%%time
+#KNN and checking accuracy on train and test data
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier()
+knn.fit(x_train,y_train)
+print('Accuracy on train data for KNN: {:.2f}'
+  .format(knn.score(x_train,y_train)))
+print('Accuracy on test data for KNN: {:.2f}'
+  .format(knn.score(x_test,y_test)))
+
+#Commented out IPython magic to ensure Python compatibility.
+%%time
+#SVM and checking accuracy on train and test data
+from sklearn.svm import SVC
+svm = SVC()
+svm.fit(x_train,y_train)
+print('Accuracy on train data for SVM: {:.2f}'
+  .format(svm.score(x_train,y_train)))
+print('Accuracy on test data for SVM: {:.2f}'
+  .format(svm.score(x_test,y_test)))
 
 #Confusion Matrix for SVM
 from sklearn.metrics import classification_report
