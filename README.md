@@ -4,7 +4,7 @@
 *Credits: Mirza Abubacker, Haaris Abbas, Danish Khan, Aarani Sribavan*
 <br></br>
 
-## Purpose: Predict if a MASHABLE becomes popular using its attributes as factors.  
+## Purpose: Predict the popularity of MASHABLE articles based on its attributes. 
 
 There are 58 predictive attributes to work with, these include attributes like: 
 - Num of words in the title
