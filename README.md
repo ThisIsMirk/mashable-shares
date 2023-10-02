@@ -1,5 +1,5 @@
 # mashable-shares
-**Using machine learning to predict whether an article would become popular or not.**
+**Using machine learning to predict the popularity of an article published online.**
 
 *Credits: Mirza Abubacker, Haaris Abbas, Danish Khan, Aarani Sribavan*
 <br></br>
