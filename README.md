@@ -1,5 +1,5 @@
 # mashable-shares
-**Using decision trees, SVM, and KNN to predict the popularity of an article published online.**
+**Using decision trees, SVM, and KNN to predict the popularity of articles published online.**
 
 *Credits: Mirza Abubacker, Haaris Abbas, Danish Khan, Aarani Sribavan*
 <br></br>
